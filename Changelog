@@ -1,0 +1,10 @@
+0.1 -> 0.2 
+    Added function for power for F2 intercross
+0.2 -> 0.3
+    Corrected function for discount factor for F2 intercross.
+0.3 -> 0.31
+    Corrected F2 power function and detectable effects function.
+    It was not doing the right thing for non-zero marker intervals.
+    Analytical error.
+0.31 -> 0.32
+     Changed the dominance coding to be consistent with Karl's R/qtl.
