@@ -8,3 +8,10 @@
     Analytical error.
 0.31 -> 0.32
      Changed the dominance coding to be consistent with Karl's R/qtl.
+0.32 -> 0.80
+     Major changes; too many to document.  Changed syntax of many
+     commands.  Deleted the simulation commands.  Made the whole
+     package more practical.
+0.80 -> 0.81
+     More complete documentation.  Corrected bug in powercalc
+     wrapper function.
