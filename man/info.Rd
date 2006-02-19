@@ -13,23 +13,23 @@
   no effect.  Functions for discount factors for incomplete genotyping.
 }
 \usage{
-info(alpha,theta=0,cross)
-info.bc(alpha,theta=0)
-info.f2(alpha,theta=0)
+info(sel.frac,theta=0,cross)
+info.bc(sel.frac,theta=0)
+info.f2(sel.frac,theta=0)
 deflate(theta,cross)
 deflate.bc(theta)
 deflate.f2(theta)
-nullinfo(alpha)
+nullinfo(sel.frac)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{cross}{Cross type, either "bc" for backcross, or "f2" for intercross.}
-  \item{alpha}{Selection fraction; proportion of extremes genotyped}
+  \item{sel.frac}{Selection fraction; proportion of extremes genotyped}
   \item{theta}{Recombination fraction between flanking markers}
 }
 \details{The \code{nullinfo} function calculates the information
   content per observation for any contrast between genotype means when
-  densely genotyping an \code{alpha} fraction of
+  densely genotyping an \code{sel.frac} fraction of
   the extreme phenotypic individuals.  The information content is
   calculated under the null hypothesis of no difference between the
   genotype means.  For small differences in genotype means, the

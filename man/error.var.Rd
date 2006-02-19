@@ -1,17 +1,22 @@
-\name{Effect size and error variance}
+\name{Variance and effect size}
 \alias{error.var}
 \alias{gmeans2effect}
+\alias{prop.var}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Effect size and error variance calculations}
+\title{Effect size, proportion variance explained, and error variance
+  calculations}
 \description{
 The function \code{error.var} estimates the error variance using
 estimates of the biological variance and genetic variance.  The effect
-segregating at a locus, can becalculated using \code{gmeans2effect}
-These are key inputs for power calculations.
+segregating at a locus, can be calculated using \code{gmeans2effect}
+These are key inputs for power calculations.  The function
+\code{prop.var} calculates the proportion of variance explained by a
+locus given the effect size and error variance.
 }
 \usage{
 error.var(cross,bio.var=1,gen.var=0,bio.reps=1)
-gmeans2effect(cross, means) 
+gmeans2effect(cross,means)
+prop.var(cross,effect,sigma2)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -27,6 +32,16 @@ gmeans2effect(cross, means)
     where \code{a} is the mean of the "AA" homozygotes, \code{h} is
     the mean of the "AB" heterozygotes, and \code{b} is the mean of the
     "BB" homozygotes.}
+  \item{effect}{The QTL effect which depends on the cross.  For
+    backcross, it is the difference in means the heterozygote and
+    homozygote.  For RI lines it is half the difference in means of the
+    homozygotes, for intercross, it is a two component vector of the form
+    \code{c(a,d)}, where \code{a} is the additive effect (half the
+    difference between the homozygotes), and \code{d} is the dominance
+    effect (difference between the heterozygote and the average of the
+    homozygotes). The genotype means will be \code{-a-d/2}, \code{d/2},
+    and \code{a-d/2.} }
+  \item{sigma2}{Error variance.}
 }
 \details{The function \code{error.var} estimates the error variance
   segregating in a cross using estimates of the biological (within
@@ -44,6 +59,11 @@ gmeans2effect(cross, means)
 
   The function \code{gmeans2effect} calculates the QTL effects from
   genotype means depending on the cross.
+
+  The function \code{prop.var} calculates the proportion of variance
+  attributable to a locus given the effects size(s) and the error
+  variance.  The definition of effect size is in the output of
+  \code{gmeans2effect} (see below).
 }
 
 \value{For \code{error.var} the value is the estimated error variance
@@ -68,9 +88,12 @@ error.var(cross="bc",bio.var=1,gen.var=1,bio.reps=1)
 error.var(cross="f2",bio.var=1,gen.var=1,bio.reps=1)
 error.var(cross="ri",bio.var=1,gen.var=1,bio.reps=1)
 error.var(cross="ri",bio.var=1,gen.var=1,bio.reps=10)
-gmeans2effect("f2",c(0,1,2))
-gmeans2effect("f2",c(0,1,1))
-gmeans2effect("bc",c(0,1,1))
-gmeans2effect("ri",c(0,1,1))
+gmeans2effect(cross="f2",means=c(0,1,2))
+gmeans2effect(cross="f2",means=c(0,1,1))
+gmeans2effect(cross="bc",means=c(0,1,1))
+gmeans2effect(cross="ri",means=c(0,1,1))
+prop.var(cross="bc",effect=5,sigma2=1)
+prop.var(cross="f2",effect=c(5,0),sigma2=1)
+prop.var(cross="ri",effect=5,sigma2=1)
 }
 \keyword{design}

@@ -15,3 +15,15 @@
 0.80 -> 0.81
      More complete documentation.  Corrected bug in powercalc
      wrapper function.
+0.81 -> 0.85
+     - Changed alpha to sel.frac in all arguments to minimize confusion
+       between alpha, the level of a test, and the selection fraction.
+     - Changed the name of the function "optalpha" to "optselection".
+     - The functions "powercalc", "samplesize", and "detectable"
+       now accept the arguments bio.var, gen.var, and bio.reps directly; 
+       it is not necessary to call "error.var" any more.
+     - The functions "powercalc", "samplesize", and "detectable"
+       now output the percent variance explained also.
+     - New function called "prop.var" which calculates the proportion
+       of variance explained by a locus given the cross type, effect,
+       and error variance.

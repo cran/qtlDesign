@@ -1,20 +1,20 @@
-"info2cost" <- function(alpha,cost,d=0,G=NULL,cross)
+"info2cost" <- function(sel.frac,cost,d=0,G=NULL,cross)
   {
     if(cross=="bc")
-      info2cost.bc(alpha,cost,d,G)
+      info2cost.bc(sel.frac,cost,d,G)
     else if(cross=="f2")
-      info2cost.f2(alpha,cost,d,G)
+      info2cost.f2(sel.frac,cost,d,G)
     else
       stop("Unknown cross ", cross, ".")
   }
 
 
 "info2cost.bc" <-
-function(alpha,cost,d=0,G=NULL)
+function(sel.frac,cost,d=0,G=NULL)
   {
     if((d==0) & is.null(G))
       {
-        ans <- info.bc(alpha,theta=0)/(1+cost*alpha)
+        ans <- info.bc(sel.frac,theta=0)/(1+cost*sel.frac)
       }
     else
       {
@@ -25,7 +25,7 @@ function(alpha,cost,d=0,G=NULL)
         else
           {
             theta <- recomb(d/100)
-            ans <- info.bc(alpha,theta)/(1+cost*alpha*G/d)
+            ans <- info.bc(sel.frac,theta)/(1+cost*sel.frac*G/d)
           }
       }
     ans
@@ -33,11 +33,11 @@ function(alpha,cost,d=0,G=NULL)
 
 
 "info2cost.f2" <-
-function(alpha,cost,d=0,G=NULL)
+function(sel.frac,cost,d=0,G=NULL)
   {
     if((d==0) & is.null(G))
       {
-        ans <- info.f2(alpha,theta=0)/(1+cost*alpha)
+        ans <- info.f2(sel.frac,theta=0)/(1+cost*sel.frac)
       }
     else
       {
@@ -48,7 +48,7 @@ function(alpha,cost,d=0,G=NULL)
         else
           {
             theta <- recomb(d/100)
-            ans <- info.f2(alpha,theta)$add/(1+cost*alpha*G/d)
+            ans <- info.f2(sel.frac,theta)$add/(1+cost*sel.frac*G/d)
           }
       }
     ans

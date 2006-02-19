@@ -1,16 +1,16 @@
 \name{Optimal selection fraction}
-\alias{optalpha}
-\alias{optalpha.bc}
-\alias{optalpha.f2}
+\alias{optselection}
+\alias{optselection.bc}
+\alias{optselection.f2}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Optimal selection fraction}
 \description{
 Functions to find optimal selection fractions given cost.
 }
 \usage{
-optalpha(cost,d=0,G=NULL,cross)
-optalpha.bc(cost,d=0,G=NULL)
-optalpha.f2(cost,d=0,G=NULL)
+optselection(cost,d=0,G=NULL,cross)
+optselection.bc(cost,d=0,G=NULL)
+optselection.f2(cost,d=0,G=NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -28,8 +28,8 @@ Genetics, 170:447-64.}
 \author{Saunak Sen, Jaya Satagopan, Karl Broman, and Gary Churchill}
 \seealso{\code{\link{optimize}}}
 \examples{
-optalpha(1,cross="bc")
-optalpha(0.001,10,1450,cross="bc")
-optalpha(0.001,10,1450,cross="f2")
+optselection(1,cross="bc")
+optselection(0.001,10,1450,cross="bc")
+optselection(0.001,10,1450,cross="f2")
 }
 \keyword{design}

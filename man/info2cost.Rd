@@ -8,13 +8,13 @@
 Functions to calculate information cost-ratios.
 }
 \usage{
-info2cost(alpha,cost,d,G=NULL,cross)
-info2cost.bc(alpha,cost,d,G=NULL)
-info2cost.f2(alpha,cost,d,G=NULL)
+info2cost(sel.frac,cost,d,G=NULL,cross)
+info2cost.bc(sel.frac,cost,d,G=NULL)
+info2cost.f2(sel.frac,cost,d,G=NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{alpha}{Selection fraction; proportion of individuals genotyped}
+  \item{sel.frac}{Selection fraction; proportion of individuals genotyped}
   \item{cost}{Genotyping cost in units of raising an individual.  When
   \code{d=0} (dense genotyping), it is the cost of genotyping an
   individual.  When \code{d!=0}, it is the cost of a single marker

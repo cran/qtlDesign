@@ -1,31 +1,31 @@
 "nullinfo" <-
-function(alpha)
+function(sel.frac)
   {
-    z <- -qnorm(alpha/2)
-    2*( z*dnorm(z) + alpha/2 )
+    z <- -qnorm(sel.frac/2)
+    2*( z*dnorm(z) + sel.frac/2 )
   }
 
-"info" <- function(alpha,theta=0,cross)
+"info" <- function(sel.frac,theta=0,cross)
   {
     if(cross=="bc")
-      info.bc(alpha,theta)
+      info.bc(sel.frac,theta)
     else if(cross=="f2")
-      info.f2(alpha,theta)
+      info.f2(sel.frac,theta)
     else
       stop("Unknown cross ", cross, ".")
   }
 
 "info.bc" <-
-function(alpha,theta=0)
+function(sel.frac,theta=0)
   {
-    nullinfo(alpha)*deflate.bc(theta)
+    nullinfo(sel.frac)*deflate.bc(theta)
   }
 
 "info.f2" <-
-function(alpha,theta=0)
+function(sel.frac,theta=0)
   {
     defl <- deflate.f2(theta)
-    list( add=nullinfo(alpha)*defl$add, dom=nullinfo(alpha)*defl$dom )
+    list( add=nullinfo(sel.frac)*defl$add, dom=nullinfo(sel.frac)*defl$dom )
   }
 
 "deflate" <- function(theta,cross)
