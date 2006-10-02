@@ -1,17 +1,17 @@
-"powercalc" <- function(cross,n,effect,sigma2,bio.var,gen.var,
+"powercalc" <- function(cross,n,effect,sigma2,env.var,gen.var,
                         thresh=3,sel.frac=1,theta=0,bio.reps=1)
   {
     # if error variance missing, calculate it
     if(missing(sigma2))
       {
-        if((missing(bio.var))|(missing(gen.var)))
-          stop("Need either sigma2 or both bio.var and gen.var.")
-        sigma2 <- error.var(cross,bio.var,gen.var,bio.reps)
+        if((missing(env.var))|(missing(gen.var)))
+          stop("Need either sigma2 or both env.var and gen.var.")
+        sigma2 <- error.var(cross,env.var,gen.var,bio.reps)
       }
     else
       {
-        if((!missing(bio.var))|(!missing(gen.var)))
-          stop("Need either sigma2 or both bio.var and gen.var.")
+        if((!missing(env.var))|(!missing(gen.var)))
+          stop("Need either sigma2 or both env.var and gen.var.")
       }
 
     
@@ -30,20 +30,20 @@
   }
 
 "detectable" <- function(cross,n,effect=NULL,
-                         sigma2,bio.var,gen.var,power=0.8,thresh=3,
+                         sigma2,env.var,gen.var,power=0.8,thresh=3,
                          sel.frac=1,theta=0,bio.reps=1) 
   {
     # argument check
     if(missing(sigma2))
       {
-        if((missing(bio.var))|(missing(gen.var)))
-          stop("Need either sigma2 or both bio.var and gen.var.")
-        sigma2 <- error.var(cross,bio.var,gen.var,bio.reps)
+        if((missing(env.var))|(missing(gen.var)))
+          stop("Need either sigma2 or both env.var and gen.var.")
+        sigma2 <- error.var(cross,env.var,gen.var,bio.reps)
       }
     else
       {
-        if((!missing(bio.var))|(!missing(gen.var)))
-          stop("Need either sigma2 or both bio.var and gen.var.")
+        if((!missing(env.var))|(!missing(gen.var)))
+          stop("Need either sigma2 or both env.var and gen.var.")
       }
 
     if(cross=="bc")
@@ -77,20 +77,20 @@
     t(ans) 
   }
 
-"samplesize" <- function(cross,effect,sigma2,bio.var,gen.var,power=0.8,
+"samplesize" <- function(cross,effect,sigma2,env.var,gen.var,power=0.8,
                          thresh=3,sel.frac=1,theta=0,bio.reps=1) 
   {
     # argument check
     if(missing(sigma2))
       {
-        if((missing(bio.var))|(missing(gen.var)))
-          stop("Need either sigma2 or both bio.var and gen.var.")
-        sigma2 <- error.var(cross,bio.var,gen.var,bio.reps)
+        if((missing(env.var))|(missing(gen.var)))
+          stop("Need either sigma2 or both env.var and gen.var.")
+        sigma2 <- error.var(cross,env.var,gen.var,bio.reps)
       }
     else
       {
-        if((!missing(bio.var))|(!missing(gen.var)))
-          stop("Need either sigma2 or both bio.var and gen.var.")
+        if((!missing(env.var))|(!missing(gen.var)))
+          stop("Need either sigma2 or both env.var and gen.var.")
       }
 
     if(cross=="bc")
@@ -139,7 +139,7 @@
   # power, threshold, selection fraction, and size of marker interval
     effect <- uniroot(function(x) {
       powercalc.bc(n, x, sigma2, thresh, sel.frac, theta) -
-        power}, interval = c(0,10*sqrt(sigma2/n)))$root
+        power}, interval = c(0,30*sqrt(sigma2/n)))$root
     effect
 }
 
@@ -229,7 +229,7 @@
   # power, threshold, selection fraction, and size of marker interval
   del <- uniroot(function(x) {
     powercalc.f2(n, x*effect, sigma2, thresh, sel.frac, theta) - power  },
-                 interval = c(0,10*sqrt(sigma2/n)))$root
+                 interval = c(0,30*sqrt(sigma2/n)))$root
 
     # decide what to return depending on delta flag
   return(del*effect)
@@ -278,7 +278,7 @@
   # power, threshold, selection fraction, and size of marker interval
     effect <- uniroot(function(x) {
       powercalc.ri(n, x, sigma2, thresh) -  power},
-                     interval = c(0,10*sqrt(sigma2/n)))$root
+                     interval = c(0,30*sqrt(sigma2/n)))$root
     effect
 }
 
@@ -307,7 +307,7 @@
 
 
 
-"error.var" <- function(cross,bio.var=1,gen.var=0,bio.reps=1)
+"error.var" <- function(cross,env.var=1,gen.var=0,bio.reps=1)
   {
     # get the genetic variance multiplier 
     if(cross=="bc")
@@ -319,7 +319,7 @@
     else
       error("Cross type not recognized.")
 
-    bio.var/bio.reps + CC*gen.var
+    env.var/bio.reps + CC*gen.var
     
   }
 

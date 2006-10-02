@@ -27,3 +27,11 @@
      - New function called "prop.var" which calculates the proportion
        of variance explained by a locus given the cross type, effect,
        and error variance.
+0.81 -> 0.86
+     - Added the functions to calculate genome-wide thresholds and
+       tail probabilities for genome scans using Poisson approximations.
+     - Changed search interval for detectable effect calculation.
+     - Renamed bio.var env.var in powercalc(), and error.var().
+     - Changed genome length argument to G from L in thresh() and tail.prob().
+     - Changed the units to centiMorgans from Morgans for genome length 
+       and marker spacing arguments.

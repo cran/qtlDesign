@@ -7,14 +7,14 @@
   calculations}
 \description{
 The function \code{error.var} estimates the error variance using
-estimates of the biological variance and genetic variance.  The effect
+estimates of the environmental variance and genetic variance.  The effect
 segregating at a locus, can be calculated using \code{gmeans2effect}
 These are key inputs for power calculations.  The function
 \code{prop.var} calculates the proportion of variance explained by a
 locus given the effect size and error variance.
 }
 \usage{
-error.var(cross,bio.var=1,gen.var=0,bio.reps=1)
+error.var(cross,env.var=1,gen.var=0,bio.reps=1)
 gmeans2effect(cross,means)
 prop.var(cross,effect,sigma2)
 }
@@ -22,7 +22,7 @@ prop.var(cross,effect,sigma2)
 \arguments{
   \item{cross}{String indicating cross type which is "bc", for
     backcross, "f2" for intercross, and "ri" for recombinant inbred lines.}
-  \item{bio.var}{Biological (within genotype) variance}
+  \item{env.var}{Environmental (within genotype) variance}
   \item{gen.var}{Genetic (between genotype) variance due to all loci
     segregating between the parental lines.}
   \item{bio.reps}{Number of biological replicates per unique genotype.
@@ -44,17 +44,20 @@ prop.var(cross,effect,sigma2)
   \item{sigma2}{Error variance.}
 }
 \details{The function \code{error.var} estimates the error variance
-  segregating in a cross using estimates of the biological (within
+  segregating in a cross using estimates of the environmental (within
   genotype) variance, and the genetic (between genotype variance).  The
-  biological variance is assumed to be invariant between cross types.
+  environmental variance is assumed to be invariant between cross types.
   The genetic variance segregating in RI lines is assumed to be double
   that in F2 intercross, and four times that of the backcross.  This
   assumption  holds if all loci are additive.  The error variance at a
-  locus of interest is aproximately \deqn{\gamma^2/c + \tau^2/m}, where
-  \eqn{\gamma^2} is the genetic variance (\code{gen.var}), \eqn{c} is a
+  locus of interest is aproximately \deqn{\sigma_G^2/c + \sigma_E^2/m,}{%
+    sigmaG^2/c + sigmaE^2/m,}
+  where \eqn{$\sigma_G^2$}{sigmaG^2} is the genetic variance
+  (\code{gen.var}), \eqn{c} is a
   constant depending on the cross type (1, for RI lines, 1/2 for F2
-  intercross, and 1/4 for backross), \eqn{tau^2} is the biological
-  variance (\code{bio.var}), and \eqn{m} is the number of biological
+  intercross, and 1/4 for backross), \eqn{$\sigma_E^2$}{sigmaE^2} is the
+  environmental
+  variance (\code{env.var}), and \eqn{m} is the number of biological
   replicates per unique genotype (\code{bio.reps}).
 
   The function \code{gmeans2effect} calculates the QTL effects from
@@ -84,10 +87,10 @@ Genetics, 170:447-64.}
 \author{Saunak Sen, Jaya Satagopan, Karl Broman, and Gary Churchill}
 \seealso{\code{\link{powercalc}}}
 \examples{
-error.var(cross="bc",bio.var=1,gen.var=1,bio.reps=1)
-error.var(cross="f2",bio.var=1,gen.var=1,bio.reps=1)
-error.var(cross="ri",bio.var=1,gen.var=1,bio.reps=1)
-error.var(cross="ri",bio.var=1,gen.var=1,bio.reps=10)
+error.var(cross="bc",env.var=1,gen.var=1,bio.reps=1)
+error.var(cross="f2",env.var=1,gen.var=1,bio.reps=1)
+error.var(cross="ri",env.var=1,gen.var=1,bio.reps=1)
+error.var(cross="ri",env.var=1,gen.var=1,bio.reps=10)
 gmeans2effect(cross="f2",means=c(0,1,2))
 gmeans2effect(cross="f2",means=c(0,1,1))
 gmeans2effect(cross="bc",means=c(0,1,1))

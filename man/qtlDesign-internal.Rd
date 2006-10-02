@@ -1,5 +1,7 @@
 \name{qtlDesign-internal}
 \alias{qtlDesign-internal}
+\alias{nu}
+\alias{tau}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{qtlDesign-internal}
 \description{

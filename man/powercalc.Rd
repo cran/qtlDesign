@@ -18,11 +18,11 @@ Power, sample size, and minimum detectable effect size calculations are
 performed for backcross, F2 intercross, and recombinant inbred (RI)
 lines.}
 \usage{
-powercalc(cross,n,effect,sigma2,bio.var,gen.var,thresh=3,sel.frac=1,
+powercalc(cross,n,effect,sigma2,env.var,gen.var,thresh=3,sel.frac=1,
           theta=0,bio.reps=1)
-detectable(cross,n,effect=NULL,sigma2,bio.var,gen.var,power=0.8,thresh=3,
+detectable(cross,n,effect=NULL,sigma2,env.var,gen.var,power=0.8,thresh=3,
            sel.frac=1,theta=0,bio.reps=1)
-samplesize(cross,effect,sigma2,bio.var,gen.var,power=0.8,thresh=3,
+samplesize(cross,effect,sigma2,env.var,gen.var,power=0.8,thresh=3,
            sel.frac=1,theta=0,bio.reps=1)
 }
 %- maybe also 'usage' for other objects documented here.
@@ -31,8 +31,8 @@ samplesize(cross,effect,sigma2,bio.var,gen.var,power=0.8,thresh=3,
     backcross, "f2" for intercross, and "ri" for recombinant inbred lines.}
   \item{n}{Sample size}
   \item{sigma2}{Error variance; if this argument is absent,
-    \code{bio.var} and \code{gen.var} must be specified.}
-  \item{bio.var}{Biological (within genotype) variance}
+    \code{env.var} and \code{gen.var} must be specified.}
+  \item{env.var}{Environmental (within genotype) variance}
   \item{gen.var}{Genetic (between genotype) variance due to all loci
     segregating between the parental lines.}
   \item{effect}{The QTL effect we want to detect.  For
@@ -79,8 +79,8 @@ behind the information calculations is described by Sen et. al. (2005).
 
 A key input is the error variance, \code{sigma2} which is generally
 unknown.  The user can enter the error variance directly, or estimate it
-using \code{bio.var} and \code{gen.var}.  The function \code{error.var}
-is used to the error variance using estimates of the biological variance
+using \code{env.var} and \code{gen.var}.  The function \code{error.var}
+is used to the error variance using estimates of the environmental variance
 and genetic variance.  Another key input is the effect segregating in
 a cross, which can be calculated using \code{gmeans2model}.  }
 
@@ -101,9 +101,9 @@ Genetics, 170:447-64.}
   \code{\link{gmeans2effect}}.}
 \examples{
 powercalc("bc",100,5,sigma2=1,sel.frac=1,theta=0)
-powercalc(cross="ri",n=30,effect=5,bio.var=64,gen.var=25,bio.rep=6)
+powercalc(cross="ri",n=30,effect=5,env.var=64,gen.var=25,bio.rep=6)
 detectable("bc",100,sigma2=1)
-detectable(cross="ri",n=30,bio.var=64,gen.var=25,bio.rep=8)
-samplesize(cross="f2",effect=c(5,0),bio.var=64,gen.var=25)
+detectable(cross="ri",n=30,env.var=64,gen.var=25,bio.rep=8)
+samplesize(cross="f2",effect=c(5,0),env.var=64,gen.var=25)
 }
 \keyword{design}
