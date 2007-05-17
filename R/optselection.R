@@ -11,14 +11,14 @@
 "optselection.bc" <-
 function(cost,d=0,G=NULL)
   {
-    optimize(f=info2cost.bc,interval=c(0.0001,0.9999),max=TRUE,
+    optimize(f=info2cost.bc,interval=c(0.0001,0.9999),maximum=TRUE,
              G=G,d=d,cost=cost)$maximum
   }
 
 "optselection.f2" <-
 function(cost,d=0,G=NULL)
   {
-    optimize(f=info2cost.f2,interval=c(0.0001,0.9999),max=TRUE,
+    optimize(f=info2cost.f2,interval=c(0.0001,0.9999),maximum=TRUE,
              G=G,d=d,cost=cost)$maximum
   }
 
