@@ -39,3 +39,9 @@
      - Partial argument matching no longer allowed in optimize, optim, 
        uniroot, nlm, and integrate.  Changed functions to reflect that.
 	https://stat.ethz.ch/pipermail/r-devel/2007-May/045791.html
+0.91 -> 0.92
+     - Add the ci.length function for calculating confidence interval
+       lengths
+     - Replaced optim by optimze in optspacing function for the 1-dim
+       optimization; works better
+     - Added functions for selective phenotyping (from Brian Yandell)

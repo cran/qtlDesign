@@ -34,7 +34,7 @@ optspacing.f2(cost,G=NULL,sel.frac=NULL)
 Quantitative trait locus study design from an information perspective.
 Genetics, 170:447-64.}
 \author{Saunak Sen, Jaya Satagopan, Karl Broman, and Gary Churchill}
-\seealso{\code{\link{optim}}}
+\seealso{\code{\link{optim}}, \code{\link{optimize}}}
 \examples{
 optspacing(cost=0.1,G=1440,sel.frac=0.5,cross="bc")
 optspacing(cost=30/3000,G=1440,sel.frac=NULL,cross="f2")

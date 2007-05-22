@@ -24,16 +24,16 @@ function(cost,G=NULL,sel.frac=NULL)
       }
     else
       {
-        tmp <- optim(par=50,fn=function(d,sel.frac,cost,G)
-              {-info2cost.bc(sel.frac,cost,d,G)},
-              method="L-BFGS-B",lower=.Machine$double.eps,
-              upper=Inf,             
-              G=G,sel.frac=sel.frac,cost=cost)$par
+        tmp <- optimize(f = function(d, sel.frac, cost, G)
+                        {info2cost.bc(sel.frac, cost, d, G)},
+                        lower = .Machine$double.eps, 
+                        upper = G, G = G, sel.frac = sel.frac,
+                        cost = cost,maximum=TRUE)$maximum
         tmp <- c(tmp,sel.frac)
         names(tmp) <- c("Marker spacing (cM)", "Selection fraction")
         tmp
       }
-  }
+}
 
 "optspacing.f2" <-
 function(cost,G=NULL,sel.frac=NULL)
@@ -52,11 +52,11 @@ function(cost,G=NULL,sel.frac=NULL)
       }
     else
       {
-        tmp <- optim(par=50,fn=function(d,sel.frac,cost,G)
-              {-info2cost.f2(sel.frac,cost,d,G)},
-              method="L-BFGS-B",lower=.Machine$double.eps,
-              upper=Inf,             
-              G=G,sel.frac=sel.frac,cost=cost)$par
+        tmp <- optimize(f = function(d, sel.frac, cost, G)
+                        {info2cost.f2(sel.frac, cost, d, G)},
+                        lower = .Machine$double.eps, 
+                        upper = G, G = G, sel.frac = sel.frac,
+                        cost = cost,maximum=TRUE)$maximum
         tmp <- c(tmp,sel.frac)
         names(tmp) <- c("Marker spacing (cM)", "Selection fraction")
         tmp
