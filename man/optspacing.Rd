@@ -22,7 +22,7 @@ optspacing.f2(cost,G=NULL,sel.frac=NULL)
   \item{G}{Genome size in centiMorgans}
   \item{cross}{Cross type, "bc" or "f2"}  
 }
-\details{The function \code{optim} is used to search for the optima.}
+\details{The function \code{optim} is used to search for the optima.
 }
 \value{In the first form, with the selection fraction specified, the
   spacing in centiMorgans that maximizes the information to cost ratio

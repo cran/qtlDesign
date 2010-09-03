@@ -14,8 +14,7 @@ genetic.dist(theta)
   \item{d}{Genetic distance in Morgans}
   \item{theta}{Recombination fraction}
 }
-\details{
-}
+%\details{}
 \value{\code{recomb} returns the recombination fraction
   corresponding to a genetic distance in Morgans.  \code{genetic.dist}
   returns the genetic distance in Morgans for a recombination fraction.

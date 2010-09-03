@@ -1,0 +1,18 @@
+citHeader("To cite R/qtlDesign in publications use:")
+
+citEntry(entry="article",
+         title = "R/qtlDesign: Inbred line cross experimental design",
+         author = personList(as.person("Saunak Sen"),
+                             as.person("Jaya M. Satagopan"),
+			     as.person("Karl W. Broman"),
+			     as.person("Gary A. Churchill")),
+         journal = "Mammalian Genome",			     
+         year = 2007,
+         volume = 18,
+         pages = "87-93",
+         
+         textVersion = 
+         paste("Sen et al. (2007) R/qtlDesign: Inbred line cross",
+               "experimental design. Mammalian Genome 18:87-93")
+         )
+

@@ -317,7 +317,7 @@
     else if (cross=="ri")
       CC <- 1
     else
-      error("Cross type not recognized.")
+      stop("Cross type not recognized.")
 
     env.var/bio.reps + CC*gen.var
     

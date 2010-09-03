@@ -30,7 +30,6 @@ eff1(n, nmark, s1)
 \references{Jin C, Lan H, Attie AD, Churchill GA, Bulutuglo D, Yandell BS (2004) Selective phenotyping for increased efficiency in genetic mapping studies. Genetics 168: 2285-2293.}
 \author{Brian S. Yandell (\url{mailto:byandell@wisc.edu})}
 \seealso{\code{\link{mma}}, \code{\link[qtl]{read.cross}}}
-\examples{
-}
+%\examples{}
 \keyword{design}% at least one, from doc/KEYWORDS
 

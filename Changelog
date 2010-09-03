@@ -45,3 +45,6 @@
      - Replaced optim by optimze in optspacing function for the 1-dim
        optimization; works better
      - Added functions for selective phenotyping (from Brian Yandell)
+0.92 -> 0.93
+     - Added citation information.
+     - Fixed manpage formatting.

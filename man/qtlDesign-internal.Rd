@@ -7,10 +7,8 @@
 \description{
 Internal qtlDesign functions
 }
-\usage{
-}
-\arguments{
-}
+%\usage{}
+%\arguments{}
 \details{
   These are not to be called by the user.
 }
@@ -20,5 +18,5 @@ Quantitative trait locus study design from an information perspective.
 Genetics, 170:447-64.}
 \author{Saunak Sen, Jaya Satagopan, Karl Broman, and Gary Churchill}
 
-\examples{}
+%\examples{}
 \keyword{internal}
