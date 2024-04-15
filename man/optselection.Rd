@@ -25,7 +25,7 @@ optselection.f2(cost,d=0,G=NULL)
 \references{Sen S, Satagopan JM, Churchill GA (2005) 	
 Quantitative trait locus study design from an information perspective.
 Genetics, 170:447-64.}
-\author{Saunak Sen, Jaya Satagopan, Karl Broman, and Gary Churchill}
+\author{Saunak Sen}
 \seealso{\code{\link{optimize}}}
 \examples{
 optselection(1,cross="bc")

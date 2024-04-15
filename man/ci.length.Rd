@@ -48,8 +48,8 @@ ci.length(cross,n,effect,p=0.95,sigma2=1,env.var,gen.var,bio.reps=1)
   that depends on the effect size and cross type.
 }
 
-\value{Returns the expected confidence interval width in cM assuming
-  dense markers.}
+\value{Returns the expected confidence interval width (scalar) in cM
+  assuming dense markers.}
 
 \references{
   Dupuis J and Siegmund D (1999) Statistical methods for

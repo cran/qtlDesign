@@ -36,7 +36,7 @@ Genetics, 170:447-64.}
 \author{Saunak Sen, Jaya Satagopan, Karl Broman, and Gary Churchill}
 \seealso{\code{\link{info}}}
 \examples{
-info2cost.bc(0.5,1)
-info2cost.bc(0.5,1,10,1450)
+info2cost(0.5,1,cross="bc")
+info2cost(0.5,1,10,1450,cross="bc")
 }
 \keyword{design}

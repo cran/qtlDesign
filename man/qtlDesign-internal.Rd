@@ -13,10 +13,12 @@ Internal qtlDesign functions
   These are not to be called by the user.
 }
 
-\references{Sen S, Satagopan JM, Churchill GA (2005) 	
-Quantitative trait locus study design from an information perspective.
-Genetics, 170:447-64.}
-\author{Saunak Sen, Jaya Satagopan, Karl Broman, and Gary Churchill}
+\value{Scalar value of the nu and tau functions in Siegmund (1985).
+}
+
+\references{Siegmund, D., 1985 Sequential Analysis: Tests and Confidence
+  Intervals.  Springer-Verlag, New York.}
+\author{Saunak Sen}
 
 %\examples{}
 \keyword{internal}

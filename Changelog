@@ -1,4 +1,4 @@
-0.1 -> 0.2 
+0.1 -> 0.2
     Added function for power for F2 intercross
 0.2 -> 0.3
     Corrected function for discount factor for F2 intercross.
@@ -20,7 +20,7 @@
        between alpha, the level of a test, and the selection fraction.
      - Changed the name of the function "optalpha" to "optselection".
      - The functions "powercalc", "samplesize", and "detectable"
-       now accept the arguments bio.var, gen.var, and bio.reps directly; 
+       now accept the arguments bio.var, gen.var, and bio.reps directly;
        it is not necessary to call "error.var" any more.
      - The functions "powercalc", "samplesize", and "detectable"
        now output the percent variance explained also.
@@ -33,10 +33,10 @@
      - Changed search interval for detectable effect calculation.
      - Renamed bio.var env.var in powercalc(), and error.var().
      - Changed genome length argument to G from L in thresh() and tail.prob().
-     - Changed the units to centiMorgans from Morgans for genome length 
+     - Changed the units to centiMorgans from Morgans for genome length
        and marker spacing arguments.
 0.90 -> 0.91
-     - Partial argument matching no longer allowed in optimize, optim, 
+     - Partial argument matching no longer allowed in optimize, optim,
        uniroot, nlm, and integrate.  Changed functions to reflect that.
 	https://stat.ethz.ch/pipermail/r-devel/2007-May/045791.html
 0.91 -> 0.92
@@ -48,3 +48,21 @@
 0.92 -> 0.93
      - Added citation information.
      - Fixed manpage formatting.
+0.93 -> 0.94
+     - Changed license to generic GPL.
+     - Added citation information.
+     - Bug fix in optspacing().
+0.94 -> 0.941
+     - Deleted duplicate CITATION file.
+0.941 -> 0.95
+     - Added NAMESPACE file to be R 2.14 compliant.
+0.95 -> 0.951
+     - Updated email address.
+0.951 -> 0.952
+     Thanks for Karl Broman for help with these updates.
+     - Fixed DESCRIPTION file, suggests qtl package.
+     - Fixed CITATION file.
+     - In thresh.R, spell out all arguments to pchisq()
+     - In NAMESPACE, dd importFrom() for various stats functions
+0.952 -> 0.953
+     Small changes to conform to CRAN regulations.

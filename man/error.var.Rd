@@ -52,10 +52,10 @@ prop.var(cross,effect,sigma2)
   assumption  holds if all loci are additive.  The error variance at a
   locus of interest is aproximately \deqn{\sigma_G^2/c + \sigma_E^2/m,}{%
     sigmaG^2/c + sigmaE^2/m,}
-  where \eqn{$\sigma_G^2$}{sigmaG^2} is the genetic variance
+  where \eqn{\sigma_G^2}{sigmaG^2} is the genetic variance
   (\code{gen.var}), \eqn{c} is a
   constant depending on the cross type (1, for RI lines, 1/2 for F2
-  intercross, and 1/4 for backross), \eqn{$\sigma_E^2$}{sigmaE^2} is the
+  intercross, and 1/4 for backross), \eqn{\sigma_E^2}{sigmaE^2} is the
   environmental
   variance (\code{env.var}), and \eqn{m} is the number of biological
   replicates per unique genotype (\code{bio.reps}).

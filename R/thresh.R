@@ -101,7 +101,7 @@ tailprob <- function(t,G,cross,type="1",d=0.01,cov.dim=0)
     # put everything together: search space volume, (inverse of)
     # expected clump size and marginal tail probability
 
-    lam <- S*c*pchisq(t,df,low=FALSE)
+    lam <- S*c*pchisq(t,df,lower.tail=FALSE)
     # lam <- 2*S*c*dchisq(t,df)
     
     # exponentiate for tail probability

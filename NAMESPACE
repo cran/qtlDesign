@@ -1,5 +1,29 @@
-# Default NAMESPACE created by R
-# Remove the previous line if you edit this file
+# imported functions
+importFrom("stats", "dnorm", "optim", "optimize", "pchisq", "pnorm",
+           "qexp", "qnorm", "uniroot")
 
-# Export all names
-exportPattern(".")
+# export functions
+export(ci.length)
+export(genetic.dist)
+export(info2cost)
+export(nullinfo,info,deflate)
+export(optselection)
+export(optspacing)
+export(powercalc,detectable,samplesize)
+export(error.var,gmeans2effect,prop.var)
+export(recomb)
+export(mma)
+export(tailprob,thresh,nu,tau)
+export(version.qtlDesign)
+
+# hidden functions
+
+# info2cost.bc, info2cost.f2
+# info.bc, info.f2
+# deflate.bc, deflate.f2
+# optselection.bc, optselection.f2
+# optspacing.bc, optspacing.f2
+# powercalc.bc, detectable.bc, samplesize.bc
+# powercalc.f2, detectable.f2, samplesize.f2
+# powercalc.ri, detectable.ri, samplesize.ri
+# K1, K12, Kstat, eff1, mma.level, distance, op, op2, moment2

@@ -240,7 +240,7 @@ mma <- function(genof, p, sequent = FALSE, exact = FALSE,
               tmpMat[l,]<-sort(tmpMat[l,])
             }
             zeroMat2<-pk
-            print(tmpMat)
+            message(tmpMat)
             count<-count+1
             break
           }
@@ -290,9 +290,9 @@ mma <- function(genof, p, sequent = FALSE, exact = FALSE,
       s2[i]<-sum(simMat[Mat[i,],Mat[i,]]^2)
       s2[i]<-(s2[i]-sum(diag(simMat[Mat[i,],Mat[i,]])^2))/2
     } 
-    print(s2)
+    message(s2)
     loc<-which.min(s2)
-    print(loc)
+    message(loc)
     Mat[loc,]
   }
   
@@ -325,4 +325,3 @@ mma <- function(genof, p, sequent = FALSE, exact = FALSE,
     ret$dismat <- disMat
   ret
 } ## mma
-
